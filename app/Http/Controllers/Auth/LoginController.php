@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
+use Illuminate\Http\Request;
 class LoginController extends Controller
 {
     /*
@@ -37,4 +38,21 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+
+    public function username(){
+
+
+        return 'name';
+    }
+    protected function authenticated(Request $request, $user){
+
+        return redirect('/');
+    }
+
+
+    protected function sendFailedLoginResponse(Request $request){
+        return 'login fail';
+    }
+
 }
