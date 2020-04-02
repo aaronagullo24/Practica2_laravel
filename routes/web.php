@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/custom',function(){
+    dd(config('blog.creator'));
+});

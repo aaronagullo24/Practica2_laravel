@@ -123,6 +123,10 @@ return [
 
     'cipher' => 'AES-256-CBC',
 
+    'developers'=> [
+        'aaron@aaron.com'
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers
