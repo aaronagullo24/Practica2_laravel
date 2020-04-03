@@ -127,6 +127,10 @@ return [
         'aaron@aaron.com'
     ],
 
+    'administrators'=>[
+        'aaron@admin.com'
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers

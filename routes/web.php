@@ -20,10 +20,15 @@ Route::middleware('test')->get('/', function () {
     return view('welcome');
 });
 
+Route::middleware('admin')->prefix('admin')->group(function(){
+    Route::get('/',function(){
 
-Route::get('/custom', function () {
-    dd(config('blog.creator'));
+        dd('reoute was reached');
+
+    });
 });
+
+
 
 Auth::routes();
 
