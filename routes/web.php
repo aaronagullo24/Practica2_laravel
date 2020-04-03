@@ -12,15 +12,15 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $medium =  resolve('medium-php-sdk');
+    dd($medium);
 });
 
 
-Route::get('/custom',function(){
+Route::get('/custom', function () {
     dd(config('blog.creator'));
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
