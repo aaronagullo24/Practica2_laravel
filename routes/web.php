@@ -11,13 +11,20 @@
 |
 */
 
-Route::middleware('test')->get('/', function () {
+
+Route::get('/admin',function(){
+    if(!auth()->check()){
+        throw new \App\Exceptions\HackerAlertException();
+    }
+});
+
+Route::get('/{id}' , function(\Illuminate\Http\Request $request, $id){
     // $medium =  resolve('medium-php-sdk');
     //dd($medium);
 
     //dd(session()->get('test'));
 
-    return view('welcome');
+    return \App\User::findOrFail($id);
 });
 
 Route::middleware('admin')->prefix('admin')->group(function(){
