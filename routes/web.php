@@ -11,9 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    $medium =  resolve('medium-php-sdk');
-    dd($medium);
+Route::middleware('test')->get('/', function () {
+    // $medium =  resolve('medium-php-sdk');
+    //dd($medium);
+
+    //dd(session()->get('test'));
+
+    return view('welcome');
 });
 
 
